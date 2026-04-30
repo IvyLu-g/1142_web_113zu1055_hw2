@@ -2,9 +2,11 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { usePsyDataStore } from "../../store/store"
 
 export default function Question() {
 
+  // const psyData = usePsyDataStore( (store) => state);
   const router = useRouter();
 
   let questionData = [
@@ -83,7 +85,6 @@ export default function Question() {
 
         <div>
           <div>{ ("Q" + (questionIndex+1) + ". ") + questionData[questionIndex].title }</div>
-          <div>{ `Q`}</div>
           <div onClick={ ()=> nextQuestion(0) }>{ questionData[questionIndex].options[0].text }</div>
           <div onClick={ ()=> nextQuestion(1) }>{ questionData[questionIndex].options[1].text }</div>
           <div onClick={ ()=> nextQuestion(2) }>{ questionData[questionIndex].options[2].text }</div>
