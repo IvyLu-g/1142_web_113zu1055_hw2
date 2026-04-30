@@ -1,43 +1,24 @@
-"use client"
-import { useState, useEffect } from "react";
+"use client";
+import Link from "next/link";
 
 export default function Home() {
 
-  const [counter, setCounter] = useState(0);
+// 路由
+//1. 歡迎畫面 /
+//2. 答題     /question
+//3. 準備看結果/prepare
+//4. 結果     /result
+// https://psy-test.com/color/result?id=10
 
-  function addNight(){
-    console.log("被點到了");
-  }
 
-  useEffect(function(){
-    console.log("畫面載入完成");
-  },[]);
-
-  useEffect(function(){
-    console.log("有人說晚安");
-  },[counter]);
-
-  function nextProblem(){
-    setCounter(counter+1);
-  }
 
 
   return (
     <>
-
-      {
-        (counter == 0) && <div className="w-[480px] h-screen flex justify-center items-center flex-col bg-slate-900 m-auto">
-          <div>歡迎畫面</div>
-          <div onClick={nextProblem} className="bg-slate-100 text-slate-900 px-3 py-3">開始測驗</div>
-        </div>
-      }
-
-      {
-        (counter == 0) && <div className="w-[480px] h-screen flex justify-center items-center flex-col bg-slate-900 m-auto">
-          <div>題目一</div>
-          <div onClick={nextProblem} className="bg-slate-100 text-slate-900 px-3 py-3">下一題</div>
-        </div>
-      }
+      <div className="flex flex-col justify-center items-center gap-4">
+        歡迎！
+       <Link className="text-white bg-cyan-900 px-3 py-2" href="/question">START</Link>
+      </div>
     </>
   )
 }
