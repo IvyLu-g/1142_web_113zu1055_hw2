@@ -1,7 +1,7 @@
 import { isQuestionDotToken } from 'typescript';
 import { create } from 'zustand';
 
-let questionData = [
+const questionData = [
     {
       title: "問題一",
       options: [
@@ -55,12 +55,16 @@ let questionData = [
     }
   ];
 
-
+// 建立 store hook
 const usePsyDataStore = create(
     (set) => ({
-        questionIndex: 0,
-        totalValue: 0,
+      psyData:{
+        // questionIndex: 0,
+        score: 0,
         questions: questionData
+      },
+      setScore:(score) => set( (state) => ( {psyData: {...state.psyData, score: score}}) )
+
     })
 );
 
