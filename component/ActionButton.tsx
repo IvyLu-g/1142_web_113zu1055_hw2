@@ -7,5 +7,5 @@ export default function ActionButton() {
     <>
        <Link className="text-white bg-cyan-900 px-3 py-2" href = "/">按鈕元件</Link>
     </>
-  )
+  );
 }

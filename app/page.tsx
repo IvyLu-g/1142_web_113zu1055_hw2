@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import ActionButton from "@/component/ActionButton"
+import Emoticons from "@/component/Emoticons";
 
 export default function Home() {
 
@@ -16,6 +17,8 @@ export default function Home() {
     <>
       <div className="flex flex-col justify-center items-center gap-4">
         歡迎！
+        <Emoticons>s</Emoticons>
+
        <Link className="text-white bg-cyan-900 px-3 py-2" href="/question">START</Link>
        <ActionButton/>
       </div>

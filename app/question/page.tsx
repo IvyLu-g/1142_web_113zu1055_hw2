@@ -37,9 +37,16 @@ export default function Question() {
 
         <div>
           <div>{ ("Q" + (questionIndex+1) + ". ") + psyData.questions[questionIndex].title }</div>
-          <div onClick={ ()=> nextQuestion(0) }>{ psyData.questions[questionIndex].options[0].text }</div>
+          {/* <div onClick={ ()=> nextQuestion(0) }>{ psyData.questions[questionIndex].options[0].text }</div>
           <div onClick={ ()=> nextQuestion(1) }>{ psyData.questions[questionIndex].options[1].text }</div>
-          <div onClick={ ()=> nextQuestion(2) }>{ psyData.questions[questionIndex].options[2].text }</div>
+          <div onClick={ ()=> nextQuestion(2) }>{ psyData.questions[questionIndex].options[2].text }</div> */}
+          {
+            psyData.questions[questionIndex].options.map(
+              (option: any, index: number) => {
+              return <div onClick={() => nextQuestion(index) }>{ option.text }</div>
+              }
+            )
+          }
         </div>
 
       </div>
