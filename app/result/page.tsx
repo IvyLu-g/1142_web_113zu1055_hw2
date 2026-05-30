@@ -89,7 +89,7 @@ export default function Result() {
       {/* 底部按鈕 */}
       <button
         type="button"
-        className="mt-6 w-full py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white font-bold text-sm tracking-widest shadow-md transition-all active:scale-[0.985] border border-emerald-400/20"
+        className="mt-6 w-full py-3 rounded-xl bg-linear-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white font-bold text-sm tracking-widest shadow-md transition-all active:scale-[0.985] border border-emerald-400/20"
         onClick={playAgain}
       >
         ✦ 再次返回工廠 ✦
