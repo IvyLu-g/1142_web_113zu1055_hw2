@@ -18,7 +18,7 @@ export default function Home() {
       </h1>
 
       <Link
-        className="rounded-xl bg-red-700 px-6 py-2.5 text-sm font-bold text-white shadow-md transition-colors hover:bg-red-600"
+        className="rounded-xl bg-[#582b2b] px-6 py-2.5 text-sm font-bold text-white shadow-md transition-colors hover:bg-[#582b2b]"
         href="/question"
         onClick={handleStart}
       >

@@ -84,7 +84,7 @@ export default function Question() {
                 onClick={() => selectOption(index)}
                 className={`w-full rounded-2xl border p-4.5 text-left text-[14.5px] font-medium leading-relaxed tracking-wide transition-all duration-200 active:scale-[0.985] shadow-sm ${
                   isSelected
-                    ? "border-pink-400 bg-emerald-900/40 text-white shadow-[0_0_15px_rgba(244,114,182,0.15)] transform -translate-y-px"
+                    ? " bg-emerald-900/40 text-white shadow-[0_0_15px_rgba(244,114,182,0.15)] transform -translate-y-px"
                     : "border-emerald-800/30 bg-[#173026]/70 text-stone-300 hover:border-emerald-500/40 hover:bg-[#1a382c] hover:text-white"
                 }`}
               >
@@ -92,7 +92,7 @@ export default function Question() {
                 <span
                   className={`mr-4 inline-block rounded-xl px-2.5 py-1 text-xs font-bold tracking-normal transition-all duration-200 ${
                     isSelected
-                      ? "bg-linear-to-br from-[#582b2b] to-rose-500 text-white shadow-sm"
+                      ? "bg-linear-to-br from-[#582b2b] to-[#582b2b] text-white shadow-sm"
                       : "bg-emerald-950/80 text-emerald-300 group-hover:bg-emerald-900"
                   }`}
                 >

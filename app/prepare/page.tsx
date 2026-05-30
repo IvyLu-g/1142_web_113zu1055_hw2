@@ -6,7 +6,7 @@ export default function Prepare() {
     <div className="flex h-full flex-col items-center justify-center gap-6 text-center">
       <p className="text-lg text-stone-200">正在準備你的結果…</p>
       <Link
-        className="rounded-xl bg-red-700 px-6 py-2.5 text-sm font-bold text-white transition-colors hover:bg-red-600"
+        className="rounded-xl bg-[#582b2b] px-6 py-2.5 text-sm font-bold text-white transition-colors hover:bg-[#582b2b]"
         href="/result"
       >
         看結果
