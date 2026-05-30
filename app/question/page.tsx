@@ -58,21 +58,21 @@ export default function Question() {
           />
         </div>
 
-        {/* 題號改用更夢幻的草莓粉，與進度條呼應 */}
-        <p className="mb-2 text-xs font-bold tracking-widest text-pink-300/80 uppercase">
-          ✦ Progress: {questionIndex + 1} / {psyData.questions.length} ✦
+        {/* 題號*/}
+        <p className="mb-2 text-xs font-bold tracking-widest text-pink-300/80 uppercase text-center">
+          ✦ {questionIndex + 1} / {psyData.questions.length} ✦
         </p>
 
-        {/* 題目文字：字體放大、行距加寬 (leading-relaxed) */}
-        <h2 className="mb-4 text-xl font-bold leading-relaxed tracking-wide text-stone-100">
+        {/* 題目文字*/}
+        <h3 className="mb-4 text-xl leading-relaxed tracking-wide text-stone-100">
           <span className="text-emerald-300 mr-1">Q{questionIndex + 1}.</span>
           {currentQuestion.title}
-        </h2>
+        </h3>
 
         <hr className="mb-5 border-emerald-900/30" />
       </div>
 
-      {/* 選項區塊：將 gap 拉開到 3.5，看起來更加大氣、不擁擠 */}
+      {/* 選項區塊*/}
       <div className="flex min-h-0 flex-1 flex-col gap-3.5 overflow-y-auto pr-1">
         {currentQuestion.options.map(
           (option: { text: string }, index: number) => {
@@ -84,7 +84,7 @@ export default function Question() {
                 onClick={() => selectOption(index)}
                 className={`w-full rounded-2xl border p-4.5 text-left text-[14.5px] font-medium leading-relaxed tracking-wide transition-all duration-200 active:scale-[0.985] shadow-sm ${
                   isSelected
-                    ? "border-pink-400 bg-emerald-900/40 text-white shadow-[0_0_15px_rgba(244,114,182,0.15)] transform -translate-y-[1px]"
+                    ? "border-pink-400 bg-emerald-900/40 text-white shadow-[0_0_15px_rgba(244,114,182,0.15)] transform -translate-y-px"
                     : "border-emerald-800/30 bg-[#173026]/70 text-stone-300 hover:border-emerald-500/40 hover:bg-[#1a382c] hover:text-white"
                 }`}
               >
@@ -92,7 +92,7 @@ export default function Question() {
                 <span
                   className={`mr-4 inline-block rounded-xl px-2.5 py-1 text-xs font-bold tracking-normal transition-all duration-200 ${
                     isSelected
-                      ? "bg-linear-to-br from-pink-400 to-rose-500 text-white shadow-sm"
+                      ? "bg-linear-to-br from-[#582b2b] to-rose-500 text-white shadow-sm"
                       : "bg-emerald-950/80 text-emerald-300 group-hover:bg-emerald-900"
                   }`}
                 >

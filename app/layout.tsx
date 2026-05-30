@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Potta_One } from "next/font/google";
 import Snowfall from "@/component/Snowfall";
+import MusicPlay from "@/component/MusicPlay";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -24,6 +25,8 @@ export const metadata: Metadata = {
   description: "聖誕小精靈心理測驗",
 };
 
+
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -32,15 +35,17 @@ export default function RootLayout({
   return (
     <html
       lang="zh-TW"
-      // 💡 保持 font 變數注入
       className={`${geistSans.variable} ${pottaOne.variable} ${geistMono.variable} h-full antialiased`}
     >
       {/* 1. font-pottaOne: 讓整頁 body 預設全域直接套用這款字體 
         2. bg-slate-950 或 bg-[#0D1F1A]: 使用極深墨綠色（接近黑）作為大背景
       */}
       <body className="font-pottaOne relative flex h-full w-full justify-center bg-[#0B1411] p-4">
+        {/* 背景下雪特效 */}
         <Snowfall />
-        <div className="relative z-10 flex h-full w-full max-w-[480px] flex-col overflow-hidden rounded-3xl border border-emerald-900/30 bg-[#132A22]/95 p-5 text-stone-100 shadow-2xl backdrop-blur-[1px]">
+        <div className="relative z-10 flex h-full w-full max-w-[480px] flex-col overflow-hidden rounded-3xl border border-emerald-900/30 bg-[#132A22]/95 p-5 pt-14 text-stone-100 shadow-2xl backdrop-blur-[1px]">
+          
+          <MusicPlay />
           {children}
         </div>
 
