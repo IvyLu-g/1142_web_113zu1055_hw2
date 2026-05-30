@@ -45,11 +45,16 @@ export default function Question() {
     <div className="flex h-full min-h-0 flex-col justify-between py-2">
       {/* 頂部進度條與題號區 */}
       <div>
-        {/* 進度條改為粉綠漸層，並增加柔和外發光 */}
-        <div className="mb-4 h-2 w-full overflow-hidden rounded-full bg-emerald-950/60 shadow-inner">
+        {/* 頂部進度條：深綠色外框底色，增添聖誕層次 */}
+        <div className="mb-4 h-5 w-full overflow-hidden rounded-full bg-emerald-950/60 p-[3px] border border-emerald-900/40 shadow-inner">
           <div
-            className="h-full rounded-full bg-gradient-to-r from-emerald-400 via-emerald-300 to-pink-400 transition-all duration-500 ease-out"
-            style={{ width: `${progress}%` }}
+            className="h-full rounded-full transition-all duration-500 ease-out shadow-[inset_0_2px_4px_rgba(0,0,0,0.2)]"
+            style={{ 
+              width: `${progress}%`,
+              // 💡 關鍵：利用 linear-gradient 畫出 45 度角的紅白相間斜條紋（聖誕拐杖糖）
+              backgroundImage: 'linear-gradient(45deg, #ef4444 25%, #f8fafc 25%, #f8fafc 50%, #ef4444 50%, #ef4444 75%, #f8fafc 75%, #f8fafc)',
+              backgroundSize: '20px 20px' // 控制斜條紋的粗細與密集度
+            }}
           />
         </div>
 
@@ -87,7 +92,7 @@ export default function Question() {
                 <span
                   className={`mr-4 inline-block rounded-xl px-2.5 py-1 text-xs font-bold tracking-normal transition-all duration-200 ${
                     isSelected
-                      ? "bg-gradient-to-br from-pink-400 to-rose-500 text-white shadow-sm"
+                      ? "bg-linear-to-br from-pink-400 to-rose-500 text-white shadow-sm"
                       : "bg-emerald-950/80 text-emerald-300 group-hover:bg-emerald-900"
                   }`}
                 >
