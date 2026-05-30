@@ -1,6 +1,36 @@
 @import "tailwindcss";
-@import "@heroui/styles"; 
+@import "@heroui/styles";
 
+@theme {
+  --font-pottaOne: var(--font-patta-one), "sans-serif";
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+html,
 body {
   margin: 0;
+  height: 100%;
+}
+
+@keyframes snow-fall {
+  0% {
+    transform: translate3d(0, -8px, 0);
+  }
+  100% {
+    transform: translate3d(var(--snow-drift, 12px), 100vh, 0);
+  }
+}
+
+.snowflake {
+  top: -12px;
+  will-change: transform;
+  animation-name: snow-fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .snowfall {
+    display: none;
+  }
 }

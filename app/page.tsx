@@ -1,27 +1,30 @@
 "use client";
 import Link from "next/link";
-import ActionButton from "@/component/ActionButton"
+import ActionButton from "@/component/ActionButton";
 import Emoticons from "@/component/Emoticons";
+import { usePsyDataStore } from "@/store/store";
 
 export default function Home() {
+  const resetGame = usePsyDataStore((state) => state.resetGame);
 
-// 路由
-//1. 歡迎畫面 /
-//2. 答題     /question
-//3. 準備看結果/prepare
-//4. 結果     /result
-// https://psy-test.com/color/result?id=10
-
+  function handleStart() {
+    resetGame();
+  }
 
   return (
-    <>
-      <div className="flex flex-col justify-center items-center gap-4">
-        歡迎！
-        <Emoticons>s</Emoticons>
+    <div className="flex h-full flex-col items-center justify-center gap-6 text-center">
+      <h1 className="text-2xl leading-relaxed text-stone-50">
+        你是哪種聖誕小精靈？
+      </h1>
 
-       <Link className="text-white bg-cyan-900 px-3 py-2" href="/question">START</Link>
-       <ActionButton/>
-      </div>
-    </>
-  )
+      <Link
+        className="rounded-xl bg-red-700 px-6 py-2.5 text-sm font-bold text-white shadow-md transition-colors hover:bg-red-600"
+        href="/question"
+        onClick={handleStart}
+      >
+        START
+      </Link>
+      
+    </div>
+  );
 }
