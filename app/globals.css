@@ -47,4 +47,63 @@ body {
   .snowfall {
     display: none;
   }
+
+  .cursor-fx {
+    display: none;
+  }
+}
+
+@keyframes cursor-star-fade {
+  0% {
+    opacity: 0;
+    /* 讓星星剛出現時小一點 */
+    transform: translate(-50%, -50%) scale(0.3) rotate(var(--star-rot, 0deg));
+  }
+  15% {
+    opacity: 1;
+    /* 快速放大到正常尺寸 */
+    transform: translate(-50%, -50%) scale(1) rotate(var(--star-rot, 0deg));
+  }
+  100% {
+    opacity: 0;
+    /* 慢慢變小並優雅旋轉淡出 */
+    transform: translate(-50%, -50%) scale(0.25) rotate(calc(var(--star-rot, 0deg) + 45deg));
+  }
+}
+
+.cursor-star {
+  /* 停留時間 */
+  animation: cursor-star-fade 480ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+}
+
+
+/* 點擊中心大光暈 */
+@keyframes cursor-spark-fade {
+  0% {
+    opacity: 0.95;
+    /* 點擊瞬間從核心一個小點開始（scale 0.1） */
+    transform: translate(-50%, -50%) scale(0.1);
+    /* 超有層次的魔法金黃色強光核心 */
+    box-shadow:
+      0 0 15px 5px rgba(255, 253, 240, 0.831),
+      0 0 30px 10px rgba(205, 190, 154, 0.491),
+      0 0 60px 30px rgba(196, 166, 115, 0.379);
+  }
+  100% {
+    opacity: 0;
+    /* 向外大範圍擴散開來，像仙女棒炸開 */
+    transform: translate(-50%, -50%) scale(0.5);
+    /* 擴散到極致時，陰影範圍變大但淡出到 0 */
+    box-shadow:
+      0 0 30px 10px rgba(255, 253, 240, 0),
+      0 0 60px 30px rgba(179, 172, 154, 0),
+      0 0 100px 40px rgba(158, 135, 97, 0);
+  }
+}
+
+.cursor-spark {
+  /* 光暈擴散的總時間，搭配 ease-out 會有前面爆發快、後面溫柔淡出的高質感 */
+  animation: cursor-spark-fade 800ms cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  will-change: transform, opacity;
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Potta_One } from "next/font/google";
 import Snowfall from "@/component/Snowfall";
+import CursorSparkles from "@/component/CursorSparkles";
 import MusicPlay from "@/component/MusicPlay";
 import "./globals.css";
 
@@ -43,6 +44,7 @@ export default function RootLayout({
       <body className="font-pottaOne relative flex h-full w-full justify-center bg-[#0B1411] p-4">
         {/* 背景下雪特效 */}
         <Snowfall />
+        <CursorSparkles />
         <div className="relative z-10 flex h-full w-full max-w-[480px] flex-col overflow-hidden rounded-3xl border border-emerald-900/30 bg-[#132A22]/95 p-5 pt-14 text-stone-100 shadow-2xl backdrop-blur-[1px]">
           
           {/* 聖誕綵帶 */}

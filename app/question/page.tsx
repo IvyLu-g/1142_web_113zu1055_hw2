@@ -57,11 +57,10 @@ export default function Question() {
           {currentQuestion.title}
         </h3>
 
-        <hr className="mb-5 border-emerald-900/30" />
       </div>
 
       {/* 選項區塊*/}
-      <div className="flex min-h-0 flex-1 flex-col gap-4.5 overflow-y-auto pr-1">
+      <div className="flex min-h-0 flex-1 flex-col gap-4.5 overflow-y-auto pr-1 pt-3">
         {currentQuestion.options.map(
           (option: { text: string }, index: number) => {
             const isSelected = selectedOption === index;
@@ -94,7 +93,7 @@ export default function Question() {
       </div>
 
       {/* 底部導航按鈕區*/}
-      <div className="mt-5 flex items-center justify-between border-t border-emerald-900/20 pt-3">
+      <div className="mt-5 flex items-center justify-between pt-3">
         <div className="w-12 h-12 flex items-center justify-center">
           {questionIndex > 0 && (
             <div className="hover:scale-105 transition-transform">
