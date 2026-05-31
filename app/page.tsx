@@ -22,7 +22,6 @@ export default function Home() {
           alt="聖誕禮物盒"
           className="h-full w-full object-contain animate-gift-wiggle filter drop-shadow-[0_8px_24px_rgba(0,0,0,0.3)] select-none pointer-events-none"></img>
         {/* 視覺裝飾：偷偷在禮物盒下方加一個淡淡的金色發光，增加奇幻感 */}
-        <div className="absolute -bottom-2 h-4 w-24 bg-amber-500/10 blur-md rounded-full" />
       </div>
 
       {/* 開始按鈕：配合你的墨綠 Layout，按鈕顏色我微調成有聖誕質感的漿果紅（比原本更亮一點，更好看） */}
