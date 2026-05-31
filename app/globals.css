@@ -4,6 +4,20 @@
 @theme {
   --font-pottaOne: var(--font-patta-one), "sans-serif";
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+
+  --animate-gift-wiggle: giftwiggle 4s ease-in-out infinite;
+
+  @keyframes giftwiggle {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    2% { transform: rotate(5deg) scale(1.05); }
+    6% { transform: rotate(-5deg) scale(1.05); }
+    9% { transform: rotate(5deg) scale(1.05); }
+    11% { transform: rotate(-5deg) scale(1.05); }
+    14% { transform: rotate(3deg) scale(1.02); }
+    17% { transform: rotate(-3deg) scale(1.02); }
+    20% { transform: rotate(0deg) scale(1); }
+    24% { transform: rotate(0deg) scale(1); }
+  }
 }
 
 html,
