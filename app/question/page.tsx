@@ -42,24 +42,12 @@ export default function Question() {
   }
 
   return (
-    <div className="flex h-full min-h-0 flex-col justify-between py-2">
-      {/* 頂部進度條與題號區 */}
+    <div className="flex h-full min-h-0 flex-col justify-between pt-15 pb-2">
+      {/* 題號區 */}
       <div>
-        {/* 頂部進度條：深綠色外框底色，增添聖誕層次 */}
-        <div className="mb-4 h-5 w-full overflow-hidden rounded-full bg-emerald-950/60 p-[3px] border border-emerald-900/40 shadow-inner">
-          <div
-            className="h-full rounded-full transition-all duration-500 ease-out shadow-[inset_0_2px_4px_rgba(0,0,0,0.2)]"
-            style={{ 
-              width: `${progress}%`,
-              // 💡 關鍵：利用 linear-gradient 畫出 45 度角的紅白相間斜條紋（聖誕拐杖糖）
-              backgroundImage: 'linear-gradient(45deg, #ef4444 25%, #f8fafc 25%, #f8fafc 50%, #ef4444 50%, #ef4444 75%, #f8fafc 75%, #f8fafc)',
-              backgroundSize: '20px 20px' // 控制斜條紋的粗細與密集度
-            }}
-          />
-        </div>
 
         {/* 題號*/}
-        <p className="mb-2 text-xs font-bold tracking-widest text-pink-300/80 uppercase text-center">
+        <p className="mb-2 text-xs font-bold tracking-widest text-pink-300/80 uppercase text-center p-2">
           ✦ {questionIndex + 1} / {psyData.questions.length} ✦
         </p>
 
@@ -73,7 +61,7 @@ export default function Question() {
       </div>
 
       {/* 選項區塊*/}
-      <div className="flex min-h-0 flex-1 flex-col gap-3.5 overflow-y-auto pr-1">
+      <div className="flex min-h-0 flex-1 flex-col gap-4.5 overflow-y-auto pr-1">
         {currentQuestion.options.map(
           (option: { text: string }, index: number) => {
             const isSelected = selectedOption === index;
@@ -105,7 +93,7 @@ export default function Question() {
         )}
       </div>
 
-      {/* 底部導航按鈕區：上下增加間距 (mt-5) */}
+      {/* 底部導航按鈕區*/}
       <div className="mt-5 flex items-center justify-between border-t border-emerald-900/20 pt-3">
         <div className="w-12 h-12 flex items-center justify-center">
           {questionIndex > 0 && (
@@ -134,7 +122,21 @@ export default function Question() {
             </div>
           )}
         </div>
+
       </div>
+
+      {/* 進度條*/}
+      <div className="mb-4 h-5 w-full overflow-hidden rounded-full bg-[#132A22] p-[3px] border border-emerald-900/40 shadow-inner">
+          <div
+            className="h-full rounded-full transition-all duration-500 ease-out shadow-[inset_0_2px_4px_rgba(0,0,0,0.2)]"
+            style={{ 
+              width: `${progress}%`,
+              // 💡利用 linear-gradient 畫出 45 度角的紅白相間斜條紋
+              backgroundImage: 'linear-gradient(45deg, #ef4444 25%, #f8fafc 25%, #f8fafc 50%, #ef4444 50%, #ef4444 75%, #f8fafc 75%, #f8fafc)',
+              backgroundSize: '20px 20px' // 斜條紋的粗細與密集度
+            }}
+          />
+        </div>
     </div>
   );
 }
