@@ -2,7 +2,7 @@
 @import "@heroui/styles";
 
 @theme {
-  --font-pottaOne: var(--font-patta-one), "sans-serif";
+  --font-pottaOne: var(--font-patta-one);
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
 
   --animate-gift-wiggle: giftwiggle 4s ease-in-out infinite;
