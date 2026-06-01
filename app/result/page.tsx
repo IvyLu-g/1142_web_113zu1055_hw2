@@ -12,6 +12,9 @@ export default function Result() {
   const { totalPop, totalEff } = psyData;
 
   useEffect(() => {
+    // 防止重設遊戲時分數變為 0, 0 瞬間觸發 else 渲染
+    if (totalPop === 0 && totalEff === 0) {
+      return;}
     getResult();
   }, [totalPop, totalEff]);
 
@@ -54,7 +57,7 @@ export default function Result() {
           <p className="text-xs font-bold tracking-widest text-emerald-400 uppercase mb-2">
             ✦ Your Soul Essence ✦
           </p>
-          <h1 className={`text-3xl font-extrabold bg-linear-to-r ${accentColor} bg-clip-text text-transparent tracking-widest`}>
+          <h1 className={`text-3xl bg-linear-to-r ${accentColor} bg-clip-text text-transparent tracking-widest`}>
             {elfName}
           </h1>
           <p className="text-xs text-stone-400 mt-2 tracking-wide font-medium">{elfTitle}</p>
@@ -69,6 +72,9 @@ export default function Result() {
   }
 
   function playAgain() {
+    // 在重設 Store 之前，先把本地的 UI state 清空為 null
+    // 這樣在 Next.js 跳轉畫面的緩衝期內，中央區塊會保持乾淨，不會閃現別的精靈
+    setPsyResult(null);
     resetGame();
     router.push("/");
   }

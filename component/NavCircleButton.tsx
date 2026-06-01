@@ -14,11 +14,9 @@ export default function NavCircleButton({
       type="button"
       onClick={onClick}
       aria-label={ariaLabel}
-      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-emerald-700/50 bg-[#1a3d32] text-stone-100 shadow-md transition-all hover:border-red-400/60 hover:bg-[#234a3d] active:scale-95"
+      className="nav-circle-btn flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-emerald-700/50 bg-[#1a3d32] text-stone-100 shadow-md transition-all hover:border-red-400/60 hover:bg-[#234a3d] active:scale-95"
     >
       <svg
-        width="20"
-        height="20"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -26,6 +24,7 @@ export default function NavCircleButton({
         strokeLinecap="round"
         strokeLinejoin="round"
         aria-hidden
+        className="h-5 w-5"
       >
         {direction === "right" ? (
           <>
